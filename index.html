@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BirdOS Hyprland</title> 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+      <nav class="navbar">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="https://github.com/george12345136/BirdOS-5.0-hyprland-dots" target="_blank">Download</a></li>
+            <li><a href="wiki.html">Wiki</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+      <link rel="icon" href="Website Icon.png">
+      <img src="BirdOS Logo.png" width="400" alt="" class="logo">
+      <h2 class="title2">A Powerful Hyprland Setup</h2>
+      <h3 class="title3">For Everyone</h3>
+      <br>
+      <h1 class="title4">Why to choose BirdOS?</h3>
+      <br>
+      <h3 class="titlel">Fast, optimized for the best performance</h3>
+      <br>
+      <h3 class="titlel">Privacy Respecting</h3>
+      <br>
+      <h3 class="titlel">Always Supported</h3>
+      <br>
+      <h3 class="titlel">It just works</h3>
+      <br>
+      <br>
+      <body>
+      <div class="cursor-glow" id="glow"></div>
+      </body>
+</html>
+
+<script>
+        const glow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>

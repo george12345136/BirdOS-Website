@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BirdOS Wiki</title> 
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="cursor-glow"></div>
+      <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/george12345136/BirdOS-5.0-hyprland-dots">Download</a></li>
+            <li><a href="">Wiki</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+      <h1 class="title">BirdOS Wiki</h1>
+      <h2 class="title2">Getting Started</h2>
+      <h1 class="titleW1">What is BirdOS Wiki</h1>
+      <h2 class="titleE1">
+         BirdOS Wiki explains the apps on the BirdOS(like how they work).
+      </h2>
+      <h3 class="titleE2">For example, how Waybar works:It works on Wayland-only and can be styled using CSS</h3>
+      <br>
+      <br>
+      <br>
+      <h3 class="wikiOP1">Wiki:</h3>
+      <a href="https://github.com/Alexays/Waybar/wiki" target="_blank" class="waybarwiki">Waybar Wiki</a>
+      <a href="https://wiki.hypr.land/" class="waybarwiki" target="_blank">Hyprland Wiki</a>
+      <h3 class="waybarwiki">Swaync Wiki</h3>
+      <a href="BirdOS Wlogout Wiki.txt"  class="waybarwiki">Wlogout Wiki (From BirdOS)</a>
+      <a href="https://github.com/davatorium/rofi/wiki" class="waybarwiki" target="_blank">Rofi Wiki</a>
+      <h3></h3>
+  </body>
+</html>
+
+<script>
+        const glow = document.getElementById('cursor-glow');
+        
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>

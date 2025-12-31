@@ -1,0 +1,93 @@
+BirdOS Wlogout Wiki:
+
+NOTE:To load the config than you make, make it on ~/.config/wlogout
+
+Layout:
+
+Layout is for managing what each button is doing
+
+Example(This code is NOT for copy/paste):
+
+{
+    "label" : "shutdown", #The label
+    "action" : "shutdown now", #What command this button will do, for this is to shutdown
+    "text" : "Shutdown", #The text in the button
+    "keybind" : "s" #The keybind press the button without arrow keys and Enter
+    
+}
+
+Style:
+
+The style(using CSS)to style the buttons and colors(style.css the file is called)
+
+Example(This code is NOT for copy/paste):
+
+* {
+background-image: none; #If will be a wallpaper
+font-size: 20px; #The font Size
+font-family: "JetBrainsMono Nerd Font Regular"; #What font is using 
+}
+
+
+
+window {
+	background-color: rgba(17, 17, 17, 0.45)
+}
+
+@import '../../.config/waybar/colors.css'; Generated Colors from Matugen
+
+button {
+	border-radius: 20px;
+	margin: 10px;
+	color: @inverse_surface; #Generated Color by Matugen
+	border-color: @inverse_surface; #Generated Color by Matugen
+	background-color: rgba(0, 0, 0, 0.5); #The background color
+	outline-style: none; #The outline Style
+	border-style: solid; #The border Style
+	border-width: 0px; #The border-width
+	background-repeat: no-repeat; #Background repeat
+	background-position: center; #Background Position
+	background-size: 20%; #Background size
+	box-shadow: none; #Box shadow
+	text-shadow: none; #Text shadow
+	animation: gradient_f 20s ease-in infinite; #Animation
+}
+
+button:hover,button:focus {
+	background-color: @on_secondary_fixed_variant; #Generated Color by Matugen
+	background-size: 30%; #Background size
+	animation: gradient_f 20s ease-in infinite; #Animation
+	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682); #Custom Bezier
+}
+
+
+button span {
+	font-size: 1.2em; 
+}
+
+
+From here, there is the icons for each button
+
+#lock {
+background-image: image(url("./icons/lock.png"));
+}
+
+#logout {
+background-image: image(url("./icons/logout.png"));
+}
+
+#suspend {
+background-image: image(url("./icons/sleep.png"));
+}
+
+#shutdown {
+background-image: image(url("./icons/power.png"));
+}
+
+#reboot {
+background-image: image(url("./icons/restart.png"));
+}
+
+#hibernate {
+background-image: image(url("./icons/hibernate.png"));
+}
