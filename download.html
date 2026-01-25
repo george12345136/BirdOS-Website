@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download | BirdOS 6.0</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="cursor-glow"></div>
+    <div id="screenshot-overlay"></div>
+
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="wiki.html">Wiki</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+<div class="wiki-container">
+        <h1>Install <span class="accent-text">BirdOS 6.0</span></h1>
+        <p>The latest version of BirdOS</p>
+        
+        <div class="warning-card">
+            WARNING: If you have NVIDIA GPU, please read this: https://wiki.hypr.land/Nvidia/
+        </div>
+
+    <div class="note-card">
+        Note: Hyprland works on Arch Linux and Nix(other distros like Ubuntu, Fedora will work, but hyprland will stay outdated), the same as BirdOS(BirdOS works only in Arch Linux)
+    </div>
+
+        <a href="news.html" class="wiki-link">
+            Read Release Notes
+        </a>
+
+        <a href="https://github.com/george12345136/BirdOS-6.0-Hypr-Dots" class="wiki-link">
+            Github Page
+        </a>
+
+
+
+        <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
+
+        <h2 style="text-align: left;"><span class="step-number">1</span> Prepare Arch Linux</h2>
+        <div class="note-card">If you have Arch Linux installed, skip to Step 2.</div>
+        <p style="text-align: left;">We recommend using <code>archinstall</code>. imagine as an Ubuntu installer but in terminal and using only Enter and Keys(Ctrl or Control is required, and the entire keyboard also).</p>
+        
+        <ul style="text-align: left; color: var(--text-dim);">
+            <li>USB Flash drive(8gb +) have Arch Linux</li>
+            <li>Boot from BIOS in the USB and type <code>archinstall</code>.</li>
+            <li><strong>Disk:</strong> Go to <strong>Disk configuration</strong> > <strong>Partitiong</strong> > <strong>Use the best-effort default parition layout</strong> > <strong>select your disk</strong> > <strong>ext4</strong> </b>.</li>
+            <li><strong>Critical:</strong> The Network configuration to work is <b>NetworkManager</b>.</li>
+            <li><strong>Profile:</strong> Select Desktop > KDE Plasma<strong>(recommend)</strong>.</li>
+        </ul>
+
+        <h2 style="text-align: left; margin-top: 50px;"><span class="step-number">2</span> Install Packages</h2>
+        <p style="text-align: left;">Once you boot into Arch, open your terminal and run these commands:</p>
+
+        <div class="terminal-block">
+            sudo pacman -Syu<br>
+            sudo pacman -S firefox kitty hyprland git
+        </div>
+
+        <h2 style="text-align: left; margin-top: 50px;"><span class="step-number">3</span> Install BirdOS</h2>
+        <div class="terminal-block">
+            git clone https://github.com/george12345136/BirdOS-6.0-Hypr-Dots.git<br>
+            cd BirdOS-6.0-Hypr-Dots<br>
+            chmod u+x install.sh<br>
+            ./install.sh
+
+        </div>
+
+        <p style="text-align: left;">Install BirdOS Wallpapers:</p>
+        <div class="terminal-block">
+            yay -S matugen wlogout apple-fonts apple_cursor nerd-fonts-complete
+        </div>
+
+        <div class="note-card">
+            After the installer script done, log out and select <b>Hyprland</b> in the login screen(the recommend login screen for hyprland is SDDM).
+        </div>
+    </div>
+
+
+    <script>
+        // Cursor and Overlay Logic
+        const glow = document.getElementById('cursor-glow');
+        const overlay = document.getElementById('screenshot-overlay');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            requestAnimationFrame(() => {
+                glow.style.left = x + 'px';
+                glow.style.top = y + 'px';
+                if(overlay) {
+                    overlay.style.setProperty('--x', x + 'px');
+                    overlay.style.setProperty('--y', y + 'px');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
